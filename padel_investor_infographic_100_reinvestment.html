@@ -129,11 +129,21 @@
                                 Rental of heavy machinery for site preparation and installation.
                             </p>
                         </li>
+                        <li class="border-b border-gray-200 pb-2">
+                            <span class="font-semibold text-gray-700">Lighting: £15,000</span>
+                            <p class="text-sm text-gray-500 mt-1">
+                                Installation of court lighting for evening play.
+                            </p>
+                        </li>
+                        <li class="border-b border-gray-200 pb-2">
+                            <span class="font-semibold text-gray-700">Fencing & Perimeter: £4,000</span>
+                            <p class="text-sm text-gray-500 mt-1">
+                                Security fencing and perimeter setup.
+                            </p>
+                        </li>
                         <li>
-                            <span class="font-semibold text-gray-700">Initial Setup: £30,280</span>
+                            <span class="font-semibold text-gray-700">Initial Setup: £11,280</span>
                             <ul class="list-disc list-inside text-sm text-gray-500 ml-4 mt-1">
-                                <li>Lighting: £15,000</li>
-                                <li>Fencing & Perimeter: £4,000</li>
                                 <li>Planning & Legal Fees: £5,000</li>
                                 <li>Code-Based Entry Systems: £2,000</li>
                                 <li>Initial Marketing: £4,280</li>
@@ -262,15 +272,15 @@
             document.getElementById('profitDetails').classList.toggle('hidden');
         };
 
-        const costBreakdownData = [22200, 8160, 7200, 2160, 30280];
+        const costBreakdownData = [22200, 8160, 7200, 2160, 15000, 4000, 11280];
         const profitDistributionData = [79200, 8800];
-        const chartColors = ['#ff595e', '#ff924c', '#ffca3a', '#c5ca30', '#8ac926'];
+        const chartColors = ['#ff595e', '#ff924c', '#ffca3a', '#c5ca30', '#8ac926', '#d4a373', '#e9c46a'];
 
         const costBreakdownCtx = document.getElementById('costBreakdownChart').getContext('2d');
         new Chart(costBreakdownCtx, {
             type: 'pie',
             data: {
-                labels: ['Materials', 'Labour', 'Shipping', 'Machinery', 'Initial Setup'],
+                labels: ['Materials', 'Labour', 'Shipping', 'Machinery', 'Lighting', 'Fencing & Perimeter', 'Initial Setup'],
                 datasets: [{
                     data: costBreakdownData,
                     backgroundColor: chartColors,
@@ -342,7 +352,7 @@
         new Chart(profitDistributionCtx, {
             type: 'doughnut',
             data: {
-                labels: ['Next Court Fund (90%)', 'Investor Return (10%)'],
+                labels: [wrapLabel('Next Court Fund (90%)'), wrapLabel('Investor Return (10%)')],
                 datasets: [{
                     data: profitDistributionData,
                     backgroundColor: ['#c5ca30', '#8ac926'],
