@@ -49,24 +49,30 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <div class="md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-xl p-6">
-                <h2 class="text-2xl font-bold text-[#333] mb-4 text-center">The Exploding UK Padel Market</h2>
-                <p class="text-center mb-6 text-gray-600">Padel's explosive growth creates a low-risk, high-return opportunity, driven by a clear supply-demand gap.</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                    <div class="p-4 rounded-lg bg-[#fff8e1]">
-                        <p class="text-5xl font-bold text-[#ffca3a]">400,000+</p>
-                        <p class="mt-2 text-gray-700">Players in the UK in 2024, a triple-fold increase.</p>
-                    </div>
-                    <div class="p-4 rounded-lg bg-[#ffe9d2]">
-                        <p class="text-5xl font-bold text-[#ff924c]">1,000</p>
-                        <p class="mt-2 text-gray-700">Courts, insufficient to meet current demand.</p>
-                    </div>
-                    <div class="p-4 rounded-lg bg-[#ffebed]">
-                        <p class="text-5xl font-bold text-[#ff595e]">426</p>
-                        <p class="mt-2 text-gray-700">Players per court, showcasing massive demand.</p>
-                    </div>
-                </div>
-            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+
+<div class="md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-xl p-6">
+<h2 class="text-2xl font-bold text-[#333] mb-4 text-center">The Exploding UK Padel Market</h2>
+<p class="text-center mb-6 text-gray-600">Padel's explosive growth creates a low-risk, high-return opportunity, driven by a clear supply-demand gap.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+<div class="p-4 rounded-lg bg-[#fff8e1]">
+<p class="text-5xl font-bold text-[#ffca3a]">400,000+</p>
+<p class="mt-2 text-gray-700">Players in the UK in 2024, a triple-fold increase. <a href="https://www.lta.org.uk/about-us/padel" target="_blank" class="source-link">[Source]</a></p>
+</div>
+<div class="p-4 rounded-lg bg-[#ffe9d2]">
+<p class="text-5xl font-bold text-[#ff924c]">1,000</p>
+<p class="mt-2 text-gray-700">Courts, insufficient to meet current demand. <a href="https://www.lta.org.uk/about-us/padel" target="_blank" class="source-link">[Source]</a></p>
+</div>
+<div class="p-4 rounded-lg bg-[#ffebed]">
+<p class="text-5xl font-bold text-[#ff595e]">426</p>
+<p class="mt-2 text-gray-700">Players per court, showcasing massive demand. <a href="https://www.lta.org.uk/about-us/padel" target="_blank" class="source-link">[Source]</a></p>
+</div>
+</div>
+<div class="text-center mt-6">
+<a href="https://www.youtube.com/watch?v=49wdo0GDwp8" target="_blank" class="video-button">Watch Market Growth Video</a>
+</div>
+</div>
 
             <div class="lg:col-span-1 bg-white rounded-lg shadow-xl p-6">
                 <h2 class="text-2xl font-bold text-[#333] mb-4">Investment Allocation</h2>
@@ -74,7 +80,7 @@
                 <div class="chart-container">
                     <canvas id="costBreakdownChart"></canvas>
                 </div>
-                 <div class="text-center mt-6">
+                <div class="text-center mt-6">
                     <button onclick="toggleCostDetails()" class="bg-gray-200 text-gray-700 font-bold py-2 px-4 rounded-lg shadow-sm hover:bg-gray-300 transition-colors duration-200">
                         View Details
                     </button>
@@ -331,14 +337,14 @@
                 plugins: {
                     tooltip: {
                         callbacks: {
-                             title: tooltipTitleCallback,
-                             label: (context) => {
+                            title: tooltipTitleCallback,
+                            label: (context) => {
                                 const label = context.label || '';
                                 const value = profitDistributionData[context.dataIndex];
                                 const total = profitDistributionData.reduce((acc, current) => acc + current, 0);
                                 const percentage = ((value / total) * 100).toFixed(2);
                                 return `${label}: £${value.toLocaleString()} (${percentage}%)`;
-                             }
+                            }
                         }
                     },
                     legend: {
@@ -363,8 +369,8 @@
                 }]
             },
             options: {
-                 maintainAspectRatio: false,
-                 scales: {
+                maintainAspectRatio: false,
+                scales: {
                     y: {
                         beginAtZero: true,
                         ticks: {
