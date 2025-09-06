@@ -74,6 +74,50 @@
                 <div class="chart-container">
                     <canvas id="costBreakdownChart"></canvas>
                 </div>
+                 <div class="text-center mt-6">
+                    <button onclick="toggleCostDetails()" class="bg-gray-200 text-gray-700 font-bold py-2 px-4 rounded-lg shadow-sm hover:bg-gray-300 transition-colors duration-200">
+                        View Details
+                    </button>
+                </div>
+                <div id="costDetails" class="hidden mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">Cost Breakdown Details</h3>
+                    <ul class="space-y-4">
+                        <li class="border-b border-gray-200 pb-2">
+                            <span class="font-semibold text-gray-700">Materials: £22,200</span>
+                            <p class="text-sm text-gray-500 mt-1">
+                                Includes frame, turf, glass, and all court-specific materials.
+                            </p>
+                        </li>
+                        <li class="border-b border-gray-200 pb-2">
+                            <span class="font-semibold text-gray-700">Labour: £8,160</span>
+                            <p class="text-sm text-gray-500 mt-1">
+                                Installation team costs (3 workers, 40 hours each at £68/hr).
+                            </p>
+                        </li>
+                        <li class="border-b border-gray-200 pb-2">
+                            <span class="font-semibold text-gray-700">Shipping: £7,200</span>
+                            <p class="text-sm text-gray-500 mt-1">
+                                Cost of transporting all court components to the location.
+                            </p>
+                        </li>
+                        <li class="border-b border-gray-200 pb-2">
+                            <span class="font-semibold text-gray-700">Machinery: £2,160</span>
+                            <p class="text-sm text-gray-500 mt-1">
+                                Rental of heavy machinery for site preparation and installation.
+                            </p>
+                        </li>
+                        <li>
+                            <span class="font-semibold text-gray-700">Initial Setup: £30,280</span>
+                            <ul class="list-disc list-inside text-sm text-gray-500 ml-4 mt-1">
+                                <li>Lighting: £15,000</li>
+                                <li>Fencing & Perimeter: £4,000</li>
+                                <li>Planning & Legal Fees: £5,000</li>
+                                <li>Code-Based Entry Systems: £2,000</li>
+                                <li>Initial Marketing: £4,280</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
             <div class="lg:col-span-2 bg-white rounded-lg shadow-xl p-6">
@@ -86,15 +130,27 @@
 
             <div class="lg:col-span-2 bg-white rounded-lg shadow-xl p-6">
                 <h2 class="text-2xl font-bold text-[#333] mb-4">Profit Distribution</h2>
-                <p class="mb-6 text-gray-600">All net profits are strategically reinvested to fund future growth and accelerate expansion.</p>
+                <p class="mb-6 text-gray-600">Net profits are strategically distributed to fund future growth, with 90% reinvested and 10% allocated for maintenance.</p>
                 <div class="chart-container">
                     <canvas id="profitDistributionChart"></canvas>
+                </div>
+                <div class="text-center mt-6">
+                    <button onclick="toggleProfitDetails()" class="bg-gray-200 text-gray-700 font-bold py-2 px-4 rounded-lg shadow-sm hover:bg-gray-300 transition-colors duration-200">
+                        View Details
+                    </button>
+                </div>
+                <div id="profitDetails" class="hidden mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">Profit Distribution Details (Total Profit: £88,000)</h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-center"><span class="font-semibold text-gray-700">Next Court Fund (90%):</span> <span class="text-gray-600">£79,200</span></li>
+                        <li class="flex justify-between items-center"><span class="font-semibold text-gray-700">Maintenance Fund (10%):</span> <span class="text-gray-600">£8,800</span></li>
+                    </ul>
                 </div>
             </div>
 
             <div class="lg:col-span-1 bg-white rounded-lg shadow-xl p-6">
                  <h2 class="text-2xl font-bold text-[#333] mb-4">The Compounding Growth Plan</h2>
-                 <p class="mb-6 text-gray-600">Reinvesting 100% of net profit into the "Next Court Fund" creates a compounding effect, allowing us to fund a second court in year 1.</p>
+                 <p class="mb-6 text-gray-600">Reinvesting 90% of net profit into the "Next Court Fund" creates a compounding effect, allowing us to fund a second court in year 1.</p>
                 <div class="chart-container">
                     <canvas id="growthChart"></canvas>
                 </div>
@@ -121,16 +177,16 @@
                                 <td class="p-4 text-center">£88,000</td>
                             </tr>
                             <tr class="border-b border-gray-200">
-                                <td class="p-4">Reinvestment (100%)</td>
-                                <td class="p-4 text-center">£88,000</td>
-                                <td class="p-4 text-center">£88,000</td>
-                                <td class="p-4 text-center">£88,000</td>
+                                <td class="p-4">Reinvestment (90%)</td>
+                                <td class="p-4 text-center">£79,200</td>
+                                <td class="p-4 text-center">£79,200</td>
+                                <td class="p-4 text-center">£79,200</td>
                             </tr>
                             <tr class="bg-gray-100">
                                 <td class="p-4 font-bold text-[#ff595e]">Total Next Court Fund</td>
-                                <td class="p-4 text-center font-bold">£88,000</td>
-                                <td class="p-4 text-center font-bold">£176,000</td>
-                                <td class="p-4 text-center font-bold">£264,000</td>
+                                <td class="p-4 text-center font-bold">£79,200</td>
+                                <td class="p-4 text-center font-bold">£158,400</td>
+                                <td class="p-4 text-center font-bold">£237,600</td>
                             </tr>
                         </tbody>
                     </table>
@@ -175,6 +231,16 @@
             }
         };
 
+        const toggleCostDetails = () => {
+            document.getElementById('costDetails').classList.toggle('hidden');
+        };
+
+        const toggleProfitDetails = () => {
+            document.getElementById('profitDetails').classList.toggle('hidden');
+        };
+
+        const costBreakdownData = [22200, 8160, 7200, 2160, 30280];
+        const profitDistributionData = [79200, 8800];
         const chartColors = ['#ff595e', '#ffca3a', '#ff924c', '#c5ca30', '#8ac926'];
 
         const costBreakdownCtx = document.getElementById('costBreakdownChart').getContext('2d');
@@ -183,7 +249,7 @@
             data: {
                 labels: ['Materials', 'Labour', 'Shipping', 'Machinery', 'Initial Setup'],
                 datasets: [{
-                    data: [22200, 8160, 7200, 2160, 30280],
+                    data: costBreakdownData,
                     backgroundColor: chartColors,
                     hoverOffset: 4
                 }]
@@ -253,17 +319,28 @@
         new Chart(profitDistributionCtx, {
             type: 'doughnut',
             data: {
-                labels: ['Next Court Fund (100%)'],
+                labels: ['Next Court Fund (90%)', 'Maintenance Fund (10%)'],
                 datasets: [{
-                    data: [100],
-                    backgroundColor: ['#ffca3a'],
+                    data: profitDistributionData,
+                    backgroundColor: ['#ffca3a', '#ff924c'],
                     hoverOffset: 4
                 }]
             },
             options: {
                 maintainAspectRatio: false,
                 plugins: {
-                    tooltip: { callbacks: { title: tooltipTitleCallback } },
+                    tooltip: {
+                        callbacks: {
+                             title: tooltipTitleCallback,
+                             label: (context) => {
+                                const label = context.label || '';
+                                const value = profitDistributionData[context.dataIndex];
+                                const total = profitDistributionData.reduce((acc, current) => acc + current, 0);
+                                const percentage = ((value / total) * 100).toFixed(2);
+                                return `${label}: £${value.toLocaleString()} (${percentage}%)`;
+                             }
+                        }
+                    },
                     legend: {
                         position: 'bottom',
                     }
@@ -278,7 +355,7 @@
                 labels: [wrapLabel('Year 1'), wrapLabel('Year 2'), wrapLabel('Year 3'), wrapLabel('Year 4')],
                 datasets: [{
                     label: 'Next Court Fund',
-                    data: [88000, 176000, 264000, 352000],
+                    data: [79200, 158400, 237600, 316800],
                     borderColor: '#8ac926',
                     tension: 0.1,
                     pointBackgroundColor: '#8ac926',
