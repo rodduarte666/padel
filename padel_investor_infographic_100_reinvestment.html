@@ -231,26 +231,6 @@
     </div>
 
     <script>
-        const wrapLabel = (label) => {
-            const maxLength = 16;
-            if (label.length <= maxLength) {
-                return label;
-            }
-            const words = label.split(' ');
-            const lines = [];
-            let currentLine = '';
-            for (const word of words) {
-                if ((currentLine + ' ' + word).trim().length > maxLength && currentLine !== '') {
-                    lines.push(currentLine.trim());
-                    currentLine = word;
-                } else {
-                    currentLine += ' ' + word;
-                }
-            }
-            lines.push(currentLine.trim());
-            return lines;
-        };
-
         const tooltipTitleCallback = (tooltipItems) => {
             const item = tooltipItems[0];
             let label = item.chart.data.labels[item.dataIndex];
@@ -349,7 +329,7 @@
         new Chart(profitDistributionCtx, {
             type: 'doughnut',
             data: {
-                labels: [wrapLabel('Next Court Fund (90%)'), wrapLabel('Investor Return (10%)')],
+                labels: ['Next Court Fund (90%)', 'Investor Return (10%)'],
                 datasets: [{
                     data: profitDistributionData,
                     backgroundColor: ['#c5ca30', '#8ac926'],
@@ -382,7 +362,7 @@
         new Chart(growthCtx, {
             type: 'line',
             data: {
-                labels: [wrapLabel('Year 1'), wrapLabel('Year 2'), wrapLabel('Year 3'), wrapLabel('Year 4')],
+                labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4'],
                 datasets: [{
                     label: 'Next Court Fund',
                     data: [52200, 104400, 156600, 208800],

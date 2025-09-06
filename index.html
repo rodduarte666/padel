@@ -143,7 +143,7 @@
                         <li>
                             <span class="font-semibold text-gray-700">Annual Land Lease: £30,000</span>
                             <p class="text-sm text-gray-500 mt-1">
-                                This is a new annual cost, factored into the profit calculations below.
+                                Factored into calculations below.
                             </p>
                         </li>
                     </ul>
@@ -231,26 +231,6 @@
     </div>
 
     <script>
-        const wrapLabel = (label) => {
-            const maxLength = 16;
-            if (label.length <= maxLength) {
-                return label;
-            }
-            const words = label.split(' ');
-            const lines = [];
-            let currentLine = '';
-            for (const word of words) {
-                if ((currentLine + ' ' + word).trim().length > maxLength && currentLine !== '') {
-                    lines.push(currentLine.trim());
-                    currentLine = word;
-                } else {
-                    currentLine += ' ' + word;
-                }
-            }
-            lines.push(currentLine.trim());
-            return lines;
-        };
-
         const tooltipTitleCallback = (tooltipItems) => {
             const item = tooltipItems[0];
             let label = item.chart.data.labels[item.dataIndex];
@@ -349,7 +329,7 @@
         new Chart(profitDistributionCtx, {
             type: 'doughnut',
             data: {
-                labels: [wrapLabel('Investor Return (75%)'), wrapLabel('Next Court Fund (25%)')],
+                labels: ['Investor Return (75%)', 'Next Court Fund (25%)'],
                 datasets: [{
                     data: profitDistributionData,
                     backgroundColor: ['#ff924c', '#ffca3a'],
@@ -382,7 +362,7 @@
         new Chart(growthCtx, {
             type: 'line',
             data: {
-                labels: [wrapLabel('Year 1'), wrapLabel('Year 2'), wrapLabel('Year 3'), wrapLabel('Year 4')],
+                labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4'],
                 datasets: [{
                     label: 'Next Court Fund',
                     data: [14500, 29000, 43500, 58000],
